@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_stroke"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/surface_light"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/divider_light">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <!-- Fila 1: nombre + alerta + badge estado -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <ImageView android:id="@+id/iv_alert_icon"
+                android:layout_width="20dp" android:layout_height="20dp"
+                android:src="@drawable/ic_inventory"
+                android:tint="@color/status_occupied"
+                android:layout_marginEnd="6dp"
+                android:visibility="gone" />
+            <TextView android:id="@+id/tv_item_name"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/text_high_light" />
+            <TextView android:id="@+id/tv_status"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp" android:paddingVertical="4dp"
+                android:textSize="11sp" android:textColor="@color/surface_light"
+                android:textStyle="bold" android:background="@drawable/bg_badge_round" />
+        </LinearLayout>
+
+        <!-- Fila 2: proveedor (opcional ahora) -->
+        <TextView android:id="@+id/tv_category"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="@color/text_low_light"
+            android:layout_marginTop="2dp" />
+
+        <!-- Fila 3: cantidad total + unidad -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Stock Total" android:textSize="11sp"
+                    android:textColor="@color/text_low_light" />
+                <TextView android:id="@+id/tv_total_remaining"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="20sp" android:textStyle="bold"
+                    android:textColor="@color/text_high_light" />
+            </LinearLayout>
+            <TextView android:id="@+id/tv_unit"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textColor="@color/text_low_light"
+                android:text="kg" />
+        </LinearLayout>
+
+        <!-- Container para lotes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desglose por lotes:"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_low_light"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+            
+        <LinearLayout
+            android:id="@+id/container_lots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/divider_light" android:layout_marginVertical="10dp" />
+
+        <!-- Botones: Agregar/Ajustar stock -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_adjust_group"
+            style="@style/FoodifyButton.Outlined"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="Agregar / Ajustar Stock"
+            android:textAllCaps="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:textSize="14sp"
+            app:icon="@drawable/ic_add"
+            app:iconGravity="textStart"
+            app:iconSize="18dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

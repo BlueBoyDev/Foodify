@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/waiterHomeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio" />
+    <item android:id="@+id/tablesFragment"
+        android:icon="@drawable/ic_menu_grid"
+        android:title="Mesas" />
+    <item android:id="@+id/ordersFragment"
+        android:icon="@drawable/ic_orders"
+        android:title="Pedidos" />
+    <item android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_staff"
+        android:title="Perfil" />
+</menu>

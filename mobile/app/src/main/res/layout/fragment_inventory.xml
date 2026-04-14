@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp"
+                android:background="@color/background_light">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Inventario" android:textSize="24sp" android:textStyle="bold"
+                            android:textColor="@color/text_high_light" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Control de Lotes FIFO" android:textSize="13sp"
+                            android:textColor="@color/text_low_light" />
+                    </LinearLayout>
+                    <!-- Badge de alertas activas -->
+                    <TextView android:id="@+id/tv_alert_badge"
+                        android:layout_width="24dp" android:layout_height="24dp"
+                        android:background="@drawable/bg_circle"
+                        android:backgroundTint="@color/status_occupied"
+                        android:textColor="@color/surface_light"
+                        android:textSize="11sp" android:textStyle="bold"
+                        android:gravity="center" android:visibility="gone" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_search"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Buscar insumo..."
+                    app:startIconDrawable="@drawable/ic_search"
+                    app:startIconTint="@color/text_low_light"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Chips filtro por estado -->
+                <HorizontalScrollView android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:scrollbars="none"
+                    android:layout_marginTop="10dp">
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_filters"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        app:singleSelection="true" />
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- Lista de lotes -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_inventory"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="80dp" />
+
+            <TextView android:id="@+id/tv_empty_state"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Sin lotes de inventario" android:textSize="14sp"
+                android:textColor="@color/text_low_light" android:gravity="center"
+                android:padding="32dp" android:visibility="gone" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_lot"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        app:elevation="6dp"
+        app:backgroundTint="@color/foodify_orange"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/surface_light" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

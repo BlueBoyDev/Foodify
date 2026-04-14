@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_handle" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nuevo Menú"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_high_light"
+            android:layout_marginBottom="24dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/FoodifyInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Menú (ej. Menú Ejecutivo)"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMenuName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/FoodifyInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción o nota interna"
+            android:layout_marginBottom="24dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMenuDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Sección de Horarios Avanzados -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configuración de Horario"
+            android:textStyle="bold"
+            android:textColor="@color/foodify_orange"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona los días que estará disponible este menú:"
+            android:textSize="12sp"
+            android:textColor="@color/text_low_light"
+            android:layout_marginBottom="12dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true">
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMon" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lun" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTue" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mar" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWed" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mié" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipThu" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jue" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFri" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Vie" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSat" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sáb" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSun" style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dom" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rangos Horarios"
+                android:textStyle="bold" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddTimeRange"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ AGREGAR"
+                app:icon="@drawable/ic_add" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTimeRanges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchOutsideSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Permitir venta fuera de horario (solo admin)"
+            android:textColor="@color/text_medium_light"
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="CANCELAR" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1.5"
+                android:text="GUARDAR MENÚ"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/foodify_orange"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

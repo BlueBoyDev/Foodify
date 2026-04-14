@@ -1,0 +1,1 @@
+fix(pwa): change static cache to NetworkFirst to avoid stale bundle issues

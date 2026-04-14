@@ -1,0 +1,440 @@
+.page {
+  min-height: 100dvh;
+  background: var(--bg-app);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+/* ── Header ── */
+.header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerLogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 0 16px rgba(255, 107, 53, 0.3);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-weight: 800;
+  font-size: 0.9375rem;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.headerSub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+.branchSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 2px 0;
+  transition: opacity 0.2s ease;
+}
+
+.branchSelector:hover .headerSub {
+  color: var(--color-primary);
+}
+
+.switchBadge {
+  font-size: 0.625rem;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alertBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(127, 29, 29, 0.4);
+  border: 1px solid rgba(127, 29, 29, 0.5);
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 0.72rem;
+  color: #fca5a5;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.alertBadge:hover {
+  background: rgba(127, 29, 29, 0.6);
+}
+
+.alertDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ── Content ── */
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  animation: fadeUp 0.4s ease both;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 0 4px;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pageSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.periodPicker {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.periodBtn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.78rem;
+  font-family: var(--font-family);
+  transition: all 0.2s ease;
+}
+
+.periodActive {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+}
+
+/* ── KPI Grid ── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.kpiCard {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  border: 1px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kpiCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.kpiTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.kpiIcon {
+  font-size: 1.25rem;
+}
+
+.kpiDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.kpiValue {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin: 0 0 4px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.kpiLabel {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0 0 2px;
+  font-weight: 600;
+}
+
+.kpiSub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* ── Stock alert banner ── */
+.stockAlert {
+  background: rgba(28, 10, 10, 0.8);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(127, 29, 29, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  animation: fadeUp 0.6s ease both;
+}
+.stockAlert:hover {
+  border-color: rgba(127, 29, 29, 0.7);
+}
+
+.stockAlertIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(127, 29, 29, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.stockAlertTitle {
+  font-weight: 800;
+  color: #fca5a5;
+  font-size: 0.875rem;
+  margin: 0 0 2px;
+}
+
+.stockAlertSub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Charts ── */
+.chartsRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.chartCard {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  border: 1px solid var(--border-light);
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.chartTitle {
+  font-weight: 800;
+  font-size: 0.9375rem;
+  margin: 0 0 3px;
+  letter-spacing: -0.02em;
+}
+
+.chartSub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.chartBadge {
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── Bottom row ── */
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  animation: fadeUp 0.9s ease both;
+}
+
+.seeAllBtn {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.seeAllBtn:hover {
+  background: var(--bg-input);
+  color: var(--text-primary);
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 1fr 52px 52px 76px;
+  gap: 8px;
+  padding: 0 10px 8px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 8px;
+}
+
+.tableHeadCell {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 52px 52px 76px;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  align-items: center;
+}
+
+.tableCell {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tableBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+/* ── Modules ── */
+.modulesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.moduleCard {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.moduleCard:hover {
+  background: var(--bg-input);
+  transform: translateY(-1px);
+}
+
+.moduleIcon {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+
+.moduleLabel {
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin: 0 0 2px;
+  color: var(--text-secondary);
+}
+
+.moduleSub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin: 0;
+}

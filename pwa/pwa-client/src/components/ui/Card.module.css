@@ -1,0 +1,45 @@
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.card.hoverable {
+  cursor: pointer;
+}
+
+.card.hoverable:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.card.hoverable:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.padded {
+  padding: 16px;
+}
+
+.padded-lg {
+  padding: 24px;
+}
+
+.danger {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.warning {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.success {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.accent {
+  border-color: rgba(255, 107, 53, 0.3);
+}

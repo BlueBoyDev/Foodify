@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="24dp"
+    android:background="@color/surface_light">
+    <View android:layout_width="40dp" android:layout_height="4dp"
+        android:layout_gravity="center_horizontal" android:layout_marginBottom="16dp"
+        android:background="@color/divider_light" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Ajustar Stock" android:textSize="18sp" android:textStyle="bold"
+        android:textColor="@color/text_high_light" android:layout_marginBottom="4dp" />
+    <TextView android:id="@+id/tv_lot_info" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="13sp"
+        android:textColor="@color/text_low_light" android:layout_marginBottom="16dp" />
+    <!-- Tipo de ajuste -->
+    <RadioGroup android:id="@+id/rg_adjust_type" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+        <RadioButton android:id="@+id/rb_discount" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Descontar" android:checked="true"
+            android:buttonTint="@color/foodify_orange" />
+        <RadioButton android:id="@+id/rb_add" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Agregar" android:buttonTint="@color/foodify_orange" />
+    </RadioGroup>
+    <TextView android:id="@+id/tv_adjust_hint" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Ingresa la cantidad a descontar"
+        android:textSize="12sp" android:textColor="@color/text_low_light"
+        android:layout_marginBottom="8dp" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_quantity" style="@style/FoodifyInput"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Cantidad" android:layout_marginBottom="12dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_quantity" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/FoodifyInput"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Notas (opcional)" android:layout_marginBottom="20dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_notes" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel" style="@style/FoodifyButton.Outlined"
+            android:layout_width="0dp" android:layout_height="52dp"
+            android:layout_weight="1" android:text="Cancelar" android:layout_marginEnd="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_confirm" style="@style/FoodifyButton"
+            android:layout_width="0dp" android:layout_height="52dp"
+            android:layout_weight="1" android:text="Confirmar" />
+    </LinearLayout>
+</LinearLayout>

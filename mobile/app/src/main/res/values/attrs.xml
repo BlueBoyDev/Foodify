@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes for our design system -->
+    <attr name="divider_color" format="color" />
+    
+    <!-- Semantic status colors as attributes for theming -->
+    <attr name="status_pending_bg" format="color" />
+    <attr name="status_pending_text" format="color" />
+    <attr name="status_preparing_bg" format="color" />
+    <attr name="status_preparing_text" format="color" />
+    <attr name="status_ready_bg" format="color" />
+    <attr name="status_ready_text" format="color" />
+    <attr name="status_delivered_bg" format="color" />
+    <attr name="status_delivered_text" format="color" />
+    <attr name="status_cancelled_bg" format="color" />
+    <attr name="status_cancelled_text" format="color" />
+
+    <!-- Urgency colors -->
+    <attr name="urgent_red" format="color" />
+    <attr name="urgent_orange" format="color" />
+</resources>

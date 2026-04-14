@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_waiter"
+    app:startDestination="@id/waiterHomeFragment">
+
+    <fragment android:id="@+id/waiterHomeFragment"
+        android:name="com.codex.foodify.ui.waiter.home.WaiterHomeFragment"
+        android:label="Inicio" />
+
+    <fragment android:id="@+id/tablesFragment"
+        android:name="com.codex.foodify.ui.waiter.tables.TablesFragment"
+        android:label="Mesas" />
+
+    <fragment android:id="@+id/ordersFragment"
+        android:name="com.codex.foodify.ui.waiter.orders.WaiterOrdersFragment"
+        android:label="Pedidos" />
+
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.codex.foodify.ui.waiter.ProfileFragment"
+        android:label="Perfil" />
+
+    <fragment android:id="@+id/waiterMenuFragment"
+        android:name="com.codex.foodify.ui.waiter.menu.WaiterMenuFragment"
+        android:label="Carta Menú" />
+
+</navigation>

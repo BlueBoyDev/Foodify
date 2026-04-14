@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio" />
+    <item android:id="@+id/dishesFragment"
+        android:icon="@drawable/ic_dishes"
+        android:title="Platillos" />
+    <item android:id="@+id/inventoryFragment"
+        android:icon="@drawable/ic_inventory"
+        android:title="Inventario" />
+    <item android:id="@+id/menuFragment"
+        android:icon="@drawable/ic_menu_grid"
+        android:title="Menú" />
+    <item android:id="@+id/staffFragment"
+        android:icon="@drawable/ic_staff"
+        android:title="Staff" />
+</menu>

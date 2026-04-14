@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cashier_nav_graph"
+    app:startDestination="@id/cashierHome">
+
+    <fragment
+        android:id="@+id/cashierHome"
+        android:name="com.codex.foodify.ui.cashier.CashierHomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_cashier_home"
+        xmlns:tools="http://schemas.android.com/tools">
+        <action
+            android:id="@+id/action_home_to_scanner"
+            app:destination="@id/qrScanner" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cashierOrders"
+        android:name="com.codex.foodify.ui.cashier.CashierOrdersFragment"
+        android:label="Pedidos"
+        tools:layout="@layout/fragment_cashier_orders"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/cashierHistory"
+        android:name="com.codex.foodify.ui.cashier.CashierHistoryFragment"
+        android:label="Historial"
+        tools:layout="@layout/fragment_cashier_history"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/cashierProfile"
+        android:name="com.codex.foodify.ui.cashier.CashierProfileFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_cashier_profile"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <fragment
+        android:id="@+id/qrScanner"
+        android:name="com.codex.foodify.ui.cashier.QrScannerFragment"
+        android:label="Escanear QR"
+        tools:layout="@layout/fragment_qr_scanner"
+        xmlns:tools="http://schemas.android.com/tools">
+        <action
+            android:id="@+id/action_scanner_back"
+            app:destination="@id/cashierHome" />
+    </fragment>
+
+</navigation>
+

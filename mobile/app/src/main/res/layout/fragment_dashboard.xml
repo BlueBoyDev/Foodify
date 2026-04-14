@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_light"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header con botón de logout -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dashboard"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_high_light" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Panel Administrativo"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_low_light" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_logout"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:icon="@drawable/ic_logout"
+                    app:iconTint="@color/order_cancelled"
+                    android:text="Salir"
+                    android:textColor="@color/order_cancelled" />
+            </RelativeLayout>
+            
+            <!-- Alertas de Inventario (Nuevo) -->
+            <LinearLayout
+                android:id="@+id/layout_alerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alertas de Inventario"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_high_light"
+                    android:layout_marginBottom="8dp" />
+                    
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_alerts_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </LinearLayout>
+
+            <!-- KPI Grid -->
+            <GridLayout
+                android:id="@+id/grid_kpis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:useDefaultMargins="true">
+
+                <!-- Ventas del Mes -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+                        <View android:layout_width="32dp" android:layout_height="32dp"
+                            android:background="@drawable/bg_kpi_icon"
+                            android:backgroundTint="@color/icon_sales" />
+                        <TextView android:id="@+id/tv_sales_month" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="$0"
+                            android:textSize="18sp" android:textStyle="bold"
+                            android:textColor="@color/text_high_light" android:layout_marginTop="8dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Ventas Mes" android:textSize="11sp"
+                            android:textColor="@color/text_low_light" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Pedidos Hoy -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp" app:cardElevation="3dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+                        <View android:layout_width="32dp" android:layout_height="32dp"
+                            android:background="@drawable/bg_kpi_icon"
+                            android:backgroundTint="@color/icon_orders" />
+                        <TextView android:id="@+id/tv_orders_today" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0"
+                            android:textSize="18sp" android:textStyle="bold"
+                            android:textColor="@color/text_high_light" android:layout_marginTop="8dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Pedidos Hoy" android:textSize="11sp"
+                            android:textColor="@color/text_low_light" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </GridLayout>
+
+            <!-- Acceso a Staff -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_staff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                        android:src="@drawable/ic_staff" app:tint="@color/foodify_orange"
+                        android:background="@drawable/bg_circle" android:backgroundTint="@color/foodify_orange_surface"
+                        android:padding="8dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Gestión de Personal" android:textStyle="bold"
+                            android:textColor="@color/text_high_light" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Administra meseros y cocina" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_low_light" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Acceso a Mesas (NUEVO) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_tables"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                        android:src="@drawable/ic_table" app:tint="@color/accent_green"
+                        android:background="@drawable/bg_circle" android:backgroundTint="@color/status_ready_bg"
+                        android:padding="8dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Gestión de Mesas" android:textStyle="bold"
+                            android:textColor="@color/text_high_light" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Edita, agrega o elimina mesas" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_low_light" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Acceso a Configuración (Nuevo) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                    <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                        android:src="@drawable/ic_time" app:tint="@color/info_blue"
+                        android:background="@drawable/bg_circle" android:backgroundTint="@color/status_pending_bg"
+                        android:padding="8dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Configuración" android:textStyle="bold"
+                            android:textColor="@color/text_high_light" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Perfil, logo y seguridad" android:textSize="12sp" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right" app:tint="@color/text_low_light" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Gráfica Ventas Semanales -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_weekly_sales"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" app:cardCornerRadius="20dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Ventas Semanales" android:textStyle="bold"
+                        android:textColor="@color/text_high_light" android:layout_marginBottom="12dp" />
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/chart_weekly_sales"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Gráfica Top 3 Platillos (Nuevo) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_top_dishes"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" app:cardCornerRadius="20dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Top 3 Platillos más Pedidos" android:textStyle="bold"
+                        android:textColor="@color/text_high_light" android:layout_marginBottom="12dp" />
+                    <com.github.mikephil.charting.charts.HorizontalBarChart
+                        android:id="@+id/chart_top_dishes"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Desempeño del Staff (NUEVO) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_staff_performance"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" android:layout_marginBottom="16dp" 
+                app:cardCornerRadius="20dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Desempeño del Staff" android:textStyle="bold"
+                        android:textColor="@color/text_high_light" android:layout_marginBottom="12dp" />
+                    
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_staff_performance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

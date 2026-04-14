@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lista de staff con filtros por rol y estado — imagen 7/8/11 del prototipo -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp"
+                android:background="@color/background_light">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Staff" android:textSize="24sp" android:textStyle="bold"
+                    android:textColor="@color/text_high_light" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Gestión de Empleados" android:textSize="13sp"
+                    android:textColor="@color/text_low_light" android:layout_marginBottom="12dp" />
+
+                <!-- Buscador -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/FoodifyInput"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Buscar empleado...">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="8dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Chips Roles (fila 1) -->
+                <HorizontalScrollView android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:scrollbars="none"
+                    android:layout_marginTop="10dp">
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_roles"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        app:singleSelection="true" />
+                </HorizontalScrollView>
+
+                <!-- Chips Estado (fila 2) -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_status"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:singleSelection="true" />
+            </LinearLayout>
+
+            <!-- Lista de empleados -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_staff"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="80dp" />
+
+            <TextView android:id="@+id/tv_empty_state"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="No hay empleados" android:textSize="14sp"
+                android:textColor="@color/text_low_light" android:gravity="center"
+                android:padding="32dp" android:visibility="gone" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- FAB Nuevo empleado -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_staff"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/foodify_orange"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/surface_light" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

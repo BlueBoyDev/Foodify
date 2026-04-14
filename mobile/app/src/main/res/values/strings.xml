@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FOODIFY</string>
+    <string name="app_subtitle">Sistema de Gestión Gastronómica</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Contraseña</string>
+
+    <!-- Bottom Nav Admin -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_dishes">Platillos</string>
+    <string name="nav_inventory">Inventario</string>
+    <string name="nav_menu">Menú</string>
+    <string name="nav_staff">Staff</string>
+    <string name="nav_config">Configuración</string>
+
+    <!-- Bottom Nav Waiter -->
+    <string name="nav_tables">Mesas</string>
+    <string name="nav_orders">Pedidos</string>
+    <string name="nav_profile">Perfil</string>
+
+    <!-- States -->
+    <string name="available">Disponible</string>
+    <string name="occupied">Ocupada</string>
+    <string name="reserved">Reservada</string>
+    <string name="cleaning">Limpieza</string>
+
+    <!-- Order states -->
+    <string name="order_new">Nuevo</string>
+    <string name="order_cooking">Cocinando</string>
+    <string name="order_ready">Listo</string>
+    <string name="order_delivered">Entregado</string>
+
+    <!-- Roles (formato Jorge) -->
+    <string name="role_admin">Admin</string>
+    <string name="role_waiter">Mesero</string>
+    <string name="role_chef">Cocina</string>
+    <string name="role_cashier">Cajero</string>
+
+    <!-- Actions -->
+    <string name="btn_save">Guardar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_new_order">Nueva Orden</string>
+    <string name="btn_scan_qr">Escanear QR</string>
+    <string name="empty_state">No hay datos disponibles</string>
+    <string name="loading">Cargando…</string>
+
+    <!-- Cashier Module -->
+    <string name="home">Inicio</string>
+    <string name="orders">Pedidos</string>
+    <string name="history">Historial</string>
+    <string name="profile">Perfil</string>
+    <string name="cashier_panel">Panel de Cajero</string>
+    <string name="takeout_pending">Para Llevar Pendientes</string>
+    <string name="table_pending">Mesa Pendientes</string>
+    <string name="completed_today">Completados Hoy</string>
+    <string name="sales_today">Ventas del Día</string>
+    <string name="ready_to_deliver">Listos p/ Entregar</string>
+    <string name="ready_for_delivery">Listos para Entregar</string>
+    <string name="no_ready_orders">No hay pedidos listos</string>
+    <string name="order_management">Gestión de Pedidos</string>
+    <string name="chef_nav_orders">Comandas</string>
+    <string name="chef_nav_recipes">Recetario</string>
+    <string name="all">Todos</string>
+    <string name="takeout">Para Llevar</string>
+    <string name="at_table">En Mesa</string>
+    <string name="ready">Listo</string>
+    <string name="completed_orders">Pedidos Completados</string>
+    <string name="delivered">Entregado</string>
+    <string name="cancelled">Cancelado</string>
+    <string name="mark_as_delivered">MARCAR COMO ENTREGADO</string>
+    <string name="scan_qr">ESCANEAR QR</string>
+    <string name="manual">MANUAL</string>
+    <string name="total">Total</string>
+    <string name="type">Tipo</string>
+    <string name="account_settings">Configuración de Cuenta</string>
+    <string name="full_name">Nombre completo</string>
+    <string name="email">Correo electrónico</string>
+    <string name="role">Rol en el sistema</string>
+    <string name="cashier">Cajero</string>
+    <string name="dark_mode">Modo Oscuro</string>
+    <string name="today_statistics">Estadísticas de hoy</string>
+    <string name="orders_completed">Pedidos completados</string>
+    <string name="total_sales">Total cobrado</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="logout_description">Salir de tu cuenta</string>
+    <string name="name">Nombre</string>
+    <string name="next">Siguiente</string>
+    <string name="empty">Vacío</string>
+</resources>

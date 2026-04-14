@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_dark">
+
+    <!-- Header: Cocina + Logo + nombre chef -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:padding="16dp" android:background="?android:attr/colorBackground">
+        
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="32dp" android:layout_height="32dp"
+                app:cardCornerRadius="8dp" app:cardBackgroundColor="@color/foodify_orange">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:layout_gravity="center" android:src="@drawable/ic_kitchen_nav"
+                    app:tint="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="8dp" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Cocina" android:textSize="18sp" android:textStyle="bold"
+                    android:textColor="@color/text_primary" />
+                <TextView android:id="@+id/tv_session_status"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Sin turno activo" android:textSize="11sp"
+                    android:textColor="@color/text_secondary" />
+                <TextView android:id="@+id/tv_command_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="0 comandas" android:textSize="11sp"
+                    android:textColor="@color/foodify_orange" android:textStyle="bold"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="end">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Chef de Turno" android:textSize="11sp"
+                android:textColor="@color/text_secondary" />
+            <TextView android:id="@+id/tv_chef_name"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textColor="@color/foodify_orange"
+                android:textStyle="bold" android:text="Cargando..." />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botones de sesión de turno -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start_session"
+            style="@style/FoodifyButton"
+            android:layout_width="0dp" android:layout_height="44dp"
+            android:layout_weight="1" android:text="Iniciar Turno"
+            android:layout_marginEnd="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_end_session"
+            style="@style/FoodifyButton.Outlined"
+            android:layout_width="0dp" android:layout_height="44dp"
+            android:layout_weight="1" android:text="Terminar Turno"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Filtros por estado -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_filters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+            
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_all"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Todas"
+                android:checked="true"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_pending"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendientes"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_preparing"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En Cocina"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_delayed"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Demoradas"
+                app:chipBackgroundColor="@color/urgent_red"
+                android:textColor="@android:color/white"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_ready"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Listas"/>
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Lista de comandas con pull-to-refresh -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_kitchen_orders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Estado vacío -->
+    <TextView android:id="@+id/tv_empty_state"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Sin comandas activas" android:textSize="16sp"
+        android:textColor="@color/text_low_dark" android:gravity="center"
+        android:padding="40dp" android:visibility="gone" />
+
+</LinearLayout>

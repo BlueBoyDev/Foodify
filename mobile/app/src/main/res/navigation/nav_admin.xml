@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_admin"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment android:id="@+id/dashboardFragment"
+        android:name="com.codex.foodify.ui.admin.dashboard.DashboardFragment"
+        android:label="Dashboard" />
+
+    <fragment android:id="@+id/dishesFragment"
+        android:name="com.codex.foodify.ui.admin.dishes.DishesFragment"
+        android:label="Platillos" />
+
+    <fragment android:id="@+id/inventoryFragment"
+        android:name="com.codex.foodify.ui.admin.inventory.InventoryFragment"
+        android:label="Inventario" />
+
+    <fragment android:id="@+id/menuFragment"
+        android:name="com.codex.foodify.ui.admin.menu.MenuFragment"
+        android:label="Menú">
+        <action
+            android:id="@+id/action_menuFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/categoriesFragment"
+        android:name="com.codex.foodify.ui.admin.menu.categories.CategoriesFragment"
+        android:label="Categorías">
+        <argument
+            android:name="menuId"
+            app:argType="integer" />
+        <argument
+            android:name="menuName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment android:id="@+id/staffFragment"
+        android:name="com.codex.foodify.ui.admin.staff.StaffFragment"
+        android:label="Staff" />
+
+    <fragment android:id="@+id/configFragment"
+        android:name="com.codex.foodify.ui.admin.config.ConfigFragment"
+        android:label="Configuración" />
+
+    <fragment android:id="@+id/adminTablesFragment"
+        android:name="com.codex.foodify.ui.admin.tables.AdminTablesFragment"
+        android:label="Gestión de Mesas" />
+
+</navigation>

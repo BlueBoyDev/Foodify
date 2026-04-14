@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/surface_light">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+        <View android:layout_width="40dp" android:layout_height="4dp"
+            android:layout_gravity="center_horizontal" android:layout_marginBottom="16dp"
+            android:background="@color/divider_light" />
+        <TextView android:id="@+id/tv_title" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Nuevo Empleado"
+            android:textSize="18sp" android:textStyle="bold"
+            android:textColor="@color/text_high_light" android:layout_marginBottom="20dp" />
+        <!-- Nombre + Apellido -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_nombre" style="@style/FoodifyInput"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:hint="Nombre *"
+                android:layout_marginEnd="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_nombre" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/FoodifyInput"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:hint="Apellido">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_apellido" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email" style="@style/FoodifyInput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Email *" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Teléfono -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/FoodifyInput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Teléfono" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_telefono" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Rol (Spinner) -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Rol" android:textSize="13sp" android:textColor="@color/text_low_light"
+            android:layout_marginBottom="4dp" />
+        <Spinner android:id="@+id/spinner_rol"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:background="@drawable/bg_spinner"
+            android:layout_marginBottom="12dp" android:padding="12dp" />
+        <!-- Contraseña -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_contrasena" style="@style/FoodifyInput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Contraseña temporal *" android:layout_marginBottom="20dp"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_contrasena" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Botones -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel" style="@style/FoodifyButton.Outlined"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:text="Cancelar" android:layout_marginEnd="8dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save" style="@style/FoodifyButton"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:text="Guardar" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

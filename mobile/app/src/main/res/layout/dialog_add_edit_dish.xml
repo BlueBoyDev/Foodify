@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/surface_light">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <!-- Handle -->
+        <View android:layout_width="40dp" android:layout_height="4dp"
+            android:layout_gravity="center_horizontal" android:layout_marginBottom="16dp"
+            android:background="@color/divider_light" />
+
+        <TextView android:id="@+id/tv_title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Nuevo Platillo" android:textSize="18sp" android:textStyle="bold"
+            android:textColor="@color/text_high_light"
+            android:layout_marginBottom="4dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Completa los datos para crear un nuevo platillo en el menú."
+            android:textSize="13sp" android:textColor="@color/text_low_light"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Imágenes (Max 3) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Imágenes (máx. 3)"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_high_light"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <FrameLayout
+                android:id="@+id/btn_add_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_dish_image"
+                android:layout_marginEnd="8dp">
+                <ImageView
+                    android:id="@+id/iv_add_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/text_low_light" />
+                <ProgressBar
+                    android:id="@+id/progress_bar_images"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_selected_images"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+
+        <!-- Nombre -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_name" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Nombre del platillo *"
+            app:placeholderText="Ej: Hamburguesa con queso"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Categoría + Precio (en fila) -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_category" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:hint="Categoría *"
+                android:layout_marginEnd="8dp">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/et_category" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_price" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:hint="Precio ($) *"
+                app:placeholderText="0.00"
+                app:startIconDrawable="@drawable/ic_price">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_price" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Tiempo de preparación -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_time" style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Tiempo de preparación (minutos) *" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_time" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="number" android:text="15" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Descripción -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Descripción"
+            app:placeholderText="Describe los ingredientes o detalles..."
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textMultiLine"
+                android:minLines="2" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Switch disponible -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_available"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:checked="true" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Disponible para venta" android:textSize="14sp"
+                android:textColor="@color/text_high_light" android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Sección de Receta / Ingredientes -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/divider_light" android:layout_marginBottom="20dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ingredientes de Receta" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/text_high_light" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_ingredient"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Agregar" app:icon="@drawable/ic_add"
+                android:textColor="@color/foodify_orange" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ingredients"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvNoIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No hay ingredientes agregados"
+            android:textSize="13sp"
+            android:textColor="@color/text_low_light"
+            android:gravity="center"
+            android:padding="12dp"
+            android:visibility="gone" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Pasos de preparación"
+            android:layout_marginBottom="24dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_recipe_steps" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textMultiLine"
+                android:minLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botones -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:text="Cancelar"
+                app:strokeColor="@color/foodify_orange"
+                android:textColor="@color/foodify_orange"
+                android:layout_marginEnd="8dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:text="Guardar"
+                android:backgroundTint="@color/foodify_orange"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

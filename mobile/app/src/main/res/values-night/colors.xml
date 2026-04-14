@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Marca -->
+    <color name="foodify_orange">#E8673A</color>
+    <color name="foodify_orange_dark">#D4592E</color>
+    <color name="foodify_orange_light">#3E2D2A</color>
+
+    <!-- Fondos -->
+    <color name="bg_app">#121212</color>
+    <color name="bg_surface">#1C1C1E</color>
+    <color name="bg_surface_elevated">#2C2C2E</color>
+
+    <!-- Texto -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_hint">#555555</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Status badges (Se mantienen igual para legibilidad) -->
+    <color name="status_pending_bg">#2A2D3E</color>
+    <color name="status_pending_text">#818CF8</color>
+    <color name="status_cooking_bg">#3E2D2A</color>
+    <color name="status_cooking_text">#E8673A</color>
+    <color name="status_preparing_bg">#3E2D2A</color>
+    <color name="status_preparing_text">#E8673A</color>
+    <color name="status_ready_bg">#1A2E2A</color>
+    <color name="status_ready_text">#34D399</color>
+    <color name="status_delivered_bg">#1A2E1F</color>
+    <color name="status_delivered_text">#4CAF50</color>
+    <color name="status_cancelled_bg">#3E1A1A</color>
+    <color name="status_cancelled_text">#F87171</color>
+
+    <!-- Semánticos -->
+    <color name="color_success">#4CAF50</color>
+    <color name="color_error">#F43F5E</color>
+    <color name="color_warning">#FFC107</color>
+    <color name="color_info">#3B82F6</color>
+    <color name="color_purple">#818CF8</color>
+
+    <!-- Dividers -->
+    <color name="divider_color">#2C2C2E</color>
+
+    <!-- Otros -->
+    <color name="primary_orange">#E8673A</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="info_blue">#3B82F6</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="error_red">#F43F5E</color>
+    
+    <!-- Design System Compatibility -->
+    <color name="text_high_light">#F5F5F5</color>
+    <color name="text_low_light">#A0A0A0</color>
+    <color name="text_medium_light">#CCCCCC</color>
+    <color name="surface_light">#2A2A2A</color>
+    <color name="container_light">#333333</color>
+    <color name="foodify_orange_surface">#FFF0E8</color>
+    <color name="icon_sales">#22C55E</color>
+
+    <color name="text_high_dark">#F5F5F5</color>
+    <color name="text_low_dark">#A0A0A0</color>
+    <color name="text_medium_dark">#CCCCCC</color>
+    <color name="surface_dark">#2A2A2A</color>
+    <color name="container_dark">#333333</color>
+    
+    <!-- Urgency indicators -->
+    <color name="urgent_red">#FF6B6B</color>
+    <color name="urgent_orange">#FFD93D</color>
+
+    <!-- MISSING: Background Light (para modo oscuro) -->
+    <color name="background_light">#121212</color>
+
+    <!-- MISSING: Divider Light (para modo oscuro) -->
+    <color name="divider_light">#2C2C2E</color>
+
+    <!-- MISSING: Status Occupied (para modo oscuro) -->
+
+    <!-- MISSING: Color Primary (para modo oscuro) -->
+    <color name="color_primary">#E8673A</color>
+
+
+    <!-- MISSING: White color (para modo oscuro) -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- MISSING: Background Dark (para modo oscuro) -->
+    <color name="background_dark">#1A1A1A</color>
+
+    <!-- MISSING: Icon Colors (para modo oscuro) -->
+    <color name="icon_orders">#64B5F6</color>
+    <color name="icon_inventory">#FFB74D</color>
+    <color name="icon_alerts">#EF5350</color>
+
+    <!-- MISSING: Status Table Colors (para modo oscuro) -->
+    <color name="status_available">#66BB6A</color>
+    <color name="status_reserved">#FFD54F</color>
+    <color name="status_occupied">#E8673A</color>
+    <color name="status_cleaning">#64B5F6</color>
+
+    <!-- MISSING: Roles Staff (para modo oscuro) -->
+    <color name="role_admin">#A78BFA</color>
+    <color name="role_waiter">#60A5FA</color>
+    <color name="role_chef">#FBBF24</color>
+    <color name="role_cashier">#34D399</color>
+
+    <!-- MISSING: Estados de Pedido (para modo oscuro) -->
+    <color name="order_pending">#9CA3AF</color>
+    <color name="order_preparing">#60A5FA</color>
+    <color name="order_ready">#34D399</color>
+    <color name="order_delivered">#6B7280</color>
+    <color name="order_cancelled">#F87171</color>
+
+    <!-- MISSING: Accent Green (para modo oscuro) -->
+    <color name="accent_green">#34D399</color>
+</resources>

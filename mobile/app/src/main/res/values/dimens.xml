@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cards -->
+    <dimen name="card_radius">24dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- Dish image in list -->
+    <dimen name="dish_image_size">80dp</dimen>
+    <dimen name="dish_image_radius">16dp</dimen>
+
+    <!-- Bottom nav -->
+    <dimen name="bottom_nav_height">60dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Status dot on table card -->
+    <dimen name="status_dot_size">12dp</dimen>
+
+    <!-- Kitchen card border urgency -->
+    <dimen name="card_stroke_normal">1dp</dimen>
+    <dimen name="card_stroke_urgent">4dp</dimen>
+</resources>

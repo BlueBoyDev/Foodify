@@ -1,0 +1,62 @@
+# Gradle files
+.gradle/
+build/
+*.gradle
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+.DS_Store
+
+# Android Studio generated files and folders
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Android Studio/IntelliJ
+*.iml
+*.iws
+*.ipr
+out/
+.idea
+*.swp
+*.swo
+*~
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be tracked
+.vscode/
+
+# Miscellaneous files
+.classpath
+.cproject
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node modules (if used)
+node_modules/
+
+# Kotlin/Java generated sources
+kapt/
+

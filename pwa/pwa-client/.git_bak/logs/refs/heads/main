@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 5fb15133111c3291f3d35fbbbc7e3a639c8ecb7b ADAN011203 <2122300434@soy.utj.edu.mx> 1775959607 -0600	branch: Created from refs/remotes/origin/main
+5fb15133111c3291f3d35fbbbc7e3a639c8ecb7b 8dd15105de2e152e575a7f34f24969a65a85af8b ADAN011203 <2122300434@soy.utj.edu.mx> 1775959607 -0600	merge adan: Fast-forward
+8dd15105de2e152e575a7f34f24969a65a85af8b da446c2ba47ff0da4795ebc83399b488cbe81ede ADAN011203 <2122300434@soy.utj.edu.mx> 1775959628 -0600	commit: fix(inventory): add defensive null-checks for batches
+da446c2ba47ff0da4795ebc83399b488cbe81ede 8029f232126d9a2b877b8052cd1afcbddf05d5fb ADAN011203 <2122300434@soy.utj.edu.mx> 1775960329 -0600	commit: fix(pwa): change static cache to NetworkFirst to avoid stale bundle issues

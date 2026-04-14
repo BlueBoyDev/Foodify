@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ítem individual dentro de una comanda del chef — checkbox ready + barra de color -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="6dp">
+
+    <!-- Barra de estado lateral -->
+    <View android:id="@+id/view_item_status"
+        android:layout_width="4dp" android:layout_height="match_parent"
+        android:background="@drawable/bg_circle"
+        android:layout_marginEnd="10dp" />
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical">
+        <TextView android:id="@+id/tv_item_name"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="14sp" android:textColor="?attr/colorOnSurface" />
+        <TextView android:id="@+id/tv_item_notes"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="11sp" android:textColor="@color/foodify_orange"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Checkbox listo -->
+    <CheckBox android:id="@+id/cb_item_ready"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:buttonTint="@color/foodify_orange" />
+</LinearLayout>

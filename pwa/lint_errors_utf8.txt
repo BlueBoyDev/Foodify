@@ -1,0 +1,153 @@
+﻿
+> pwa-client@0.1.0 lint
+> eslint
+
+
+C:\Users\lupit\Foodify\pwa-client\next.config.ts
+  1:17  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\lupit\Foodify\pwa-client\src\app\admin\inventario\page.tsx
+  192:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\lupit\Foodify\pwa-client\src\app\admin\menu\page.tsx
+  591:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\lupit\Foodify\pwa-client\src\app\admin\reportes\page.tsx
+  59:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  60:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  61:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  62:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\lupit\Foodify\pwa-client\src\app\dashboard\page.tsx
+  92:21  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lupit\Foodify\pwa-client\src\app\dashboard\page.tsx:92:21
+  90 |   const [orders, setOrders] = useState<Order[]>([]);
+  91 |
+> 92 |   useEffect(() => { setOrders(readOrders()); }, []);
+     |                     ^^^^^^^^^ Avoid calling setState() directly within an effect
+  93 |
+  94 |   const salesData  = useMemo(() => buildSalesData(orders, period === "hoy" ? 1 : period === "semana" ? 7 : period === "mes" ? 30 : 90), [orders, period]);
+  95 |   const profitData = useMemo(() => buildProfitData(), []);  react-hooks/set-state-in-effect
+
+C:\Users\lupit\Foodify\pwa-client\src\app\layout.tsx
+  38:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\Users\lupit\Foodify\pwa-client\src\app\mesero\page.tsx
+  6:15  warning  'Order' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lupit\Foodify\pwa-client\src\app\ordenes\[folio]\page.tsx
+  125:10  warning  'tick' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  153:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lupit\Foodify\pwa-client\src\app\ordenes\[folio]\page.tsx:153:5
+  151 |
+  152 |   useEffect(() => {
+> 153 |     loadOrder();
+      |     ^^^^^^^^^ Avoid calling setState() directly within an effect
+  154 |     const pollInterval = setInterval(loadOrder, 5000);  // T38 ÔÇö polling 5s
+  155 |     const tickInterval = setInterval(() => setTick((t) => t + 1), 30000); // refresh elapsed text
+  156 |     return () => { clearInterval(pollInterval); clearInterval(tickInterval); };  react-hooks/set-state-in-effect
+
+C:\Users\lupit\Foodify\pwa-client\src\app\ordenes\page.tsx
+   10:26  warning  'IconClock' is defined but never used      @typescript-eslint/no-unused-vars
+  311:9   warning  'text' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lupit\Foodify\pwa-client\src\app\para-llevar\page.tsx
+  456:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lupit\Foodify\pwa-client\src\app\para-llevar\page.tsx:456:5
+  454 |
+  455 |   useEffect(() => {
+> 456 |     setMounted(true);
+      |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  457 |     // Cargar men├║ real del backend
+  458 |     fetchPublicMenu(RESTAURANT_SLUG, "takeout").then(({ dishes: d, categories: c, restaurantId: rid }) => {
+  459 |       if (d.length > 0) {  react-hooks/set-state-in-effect
+
+C:\Users\lupit\Foodify\pwa-client\src\components\layout\TabBar.tsx
+  6:19  warning  'IconFork' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lupit\Foodify\pwa-client\src\context\GuestContext.tsx
+  42:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lupit\Foodify\pwa-client\src\context\GuestContext.tsx:42:5
+  40 |     }
+  41 |
+> 42 |     setSessionId(id);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  43 |     setIsReady(true);
+  44 |   }, []);
+  45 |  react-hooks/set-state-in-effect
+
+C:\Users\lupit\Foodify\pwa-client\src\context\ToastContext.tsx
+  8:3  warning  'useId' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lupit\Foodify\pwa-client\src\lib\authApi.ts
+  43:23  warning  '_' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\lupit\Foodify\pwa-client\src\lib\menuApi.ts
+  74:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\lupit\Foodify\pwa-client\src\lib\useGuestOrders.ts
+  36:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lupit\Foodify\pwa-client\src\lib\useGuestOrders.ts:36:5
+  34 |     };
+  35 |     window.addEventListener("storage", onStorage);
+> 36 |     setDataReady(true);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  37 |     return () => window.removeEventListener("storage", onStorage);
+  38 |   }, []);
+  39 |  react-hooks/set-state-in-effect
+
+C:\Users\lupit\Foodify\pwa-client\src\lib\useSharedOrders.ts
+  56:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\lupit\Foodify\pwa-client\src\lib\useSharedOrders.ts:56:5
+  54 |   useEffect(() => {
+  55 |     // Carga inicial
+> 56 |     fetchFromBackend().then(() => setIsReady(true));
+     |     ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  57 |
+  58 |     // Polling cada 3s
+  59 |     const poll = setInterval(() => {  react-hooks/set-state-in-effect
+
+Ô£û 22 problems (14 errors, 8 warnings)
+

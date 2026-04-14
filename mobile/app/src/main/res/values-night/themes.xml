@@ -1,0 +1,100 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Foodify" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/foodify_orange</item>
+        <item name="colorPrimaryVariant">@color/foodify_orange_dark</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/foodify_orange_light</item>
+        <item name="colorSecondaryVariant">@color/foodify_orange_dark</item>
+        <item name="colorOnSecondary">@color/foodify_orange</item>
+
+        <!-- Background and Surface colors. -->
+        <item name="android:windowBackground">@color/bg_app</item>
+        <item name="android:colorBackground">@color/bg_app</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        
+        <!-- Design System Attributes -->
+        <item name="divider_color">@color/divider_color</item>
+        <item name="status_pending_bg">@color/status_pending_bg</item>
+        <item name="status_pending_text">@color/status_pending_text</item>
+        <item name="status_preparing_bg">@color/status_preparing_bg</item>
+        <item name="status_preparing_text">@color/status_preparing_text</item>
+        <item name="status_ready_bg">@color/status_ready_bg</item>
+        <item name="status_ready_text">@color/status_ready_text</item>
+        <item name="status_delivered_bg">@color/status_delivered_bg</item>
+        <item name="status_delivered_text">@color/status_delivered_text</item>
+        <item name="status_cancelled_bg">@color/status_cancelled_bg</item>
+        <item name="status_cancelled_text">@color/status_cancelled_text</item>
+        <item name="urgent_red">@color/urgent_red</item>
+        <item name="urgent_orange">@color/urgent_orange</item>
+
+        <!-- OnBackground and OnSurface colors. -->
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- Status bar and Navigation bar. -->
+        <item name="android:statusBarColor">@color/bg_app</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+
+        <!-- Global Text Appearances -->
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Foodify.H5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Foodify.H5</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Foodify.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Foodify.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Foodify.Caption</item>
+    </style>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- MISSING STYLES FOR LAYOUT FILES (NIGHT MODE)  -->
+    <!-- ══════════════════════════════════════════════ -->
+
+    <!-- Foodify Input Style -->
+    <style name="FoodifyInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/foodify_orange</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="hintTextColor">@color/text_hint</item>
+    </style>
+
+    <!-- Foodify Button Style -->
+    <style name="FoodifyButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/foodify_orange</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- Foodify Button Outlined Style -->
+    <style name="FoodifyButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/foodify_orange</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/foodify_orange</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- Foodify Bottom Navigation Style -->
+    <style name="FoodifyBottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/bg_surface</item>
+        <item name="elevation">2dp</item>
+    </style>
+
+    <!-- Shape Appearance for Foodify Cards -->
+    <style name="ShapeAppearance.Foodify" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Foodify.CardTop" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+</resources>
